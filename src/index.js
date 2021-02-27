@@ -8,6 +8,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api',routers);
 
-app.listen(8000,()=>{
-    console.log('se esta usando el puerto 3000');
+process.env.PORT = process.env.PORT || 8000
+
+app.listen(process.env.PORT,()=>{
+    console.log(`PORT : ${process.env.PORT}`);
 });
